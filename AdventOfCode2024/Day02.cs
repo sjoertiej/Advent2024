@@ -21,7 +21,6 @@ public class Day02
                 // Try to fix it by looping through the list and deleting on item every time
                 for (int i = 0; i < report.Count; i++)
                 {
-                    // new list
                     var updatedReport = new List<int>(report);
                     updatedReport.RemoveAt(i);
                     isReportSafe = CheckIfReportIsSafe(updatedReport);
@@ -88,8 +87,6 @@ public class Day02
             var isReportSafe = CheckIfReportIsSafe(report);
             if (isReportSafe)
                 amountOfSafeReports += 1;
-
-            // TODO problem
         }
         return amountOfSafeReports;
     }
