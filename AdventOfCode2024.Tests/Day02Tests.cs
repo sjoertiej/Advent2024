@@ -24,4 +24,21 @@ public class Day02Tests
         System.Diagnostics.Debug.WriteLine($"The sum is {sum}");
     }
 
+    [Fact]
+    public void TestExample2()
+    {
+        var filePath = @"C:\GitHub\AdventOfCode2024\InputDocuments\day2_test_data.txt";
+        var day02 = new Day02();
+        var sum = day02.Part2(filePath);
+        System.Diagnostics.Debug.WriteLine($"The sum is {sum}");
+    }
+
+    [Fact]
+    public void TestPart2()
+    {
+        var filePath = @"C:\GitHub\AdventOfCode2024\InputDocuments\day2_input.txt";
+        var day02 = new Day02();
+        var sum = day02.Part2(filePath);
+        System.Diagnostics.Debug.WriteLine($"The sum is {sum}");
+    }
 }
