@@ -2,6 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Tests", // Debug unit tests
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/AdventOfCode2024.Tests/bin/Debug/net8.0/AdventOfCode2024.Tests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
