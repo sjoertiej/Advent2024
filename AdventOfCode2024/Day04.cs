@@ -29,43 +29,43 @@ public class Day04
             [-1, 1]    // Diagonal up-right
         };
 
-        for (int i = 0; i < rows; i++)
+        for (int x = 0; x < rows; x++)
         {
             // System.Diagnostics.Debug.WriteLine(i);
-            for (int j = 0; j < cols; j++)
+            for (int y = 0; y < cols; y++)
             {
                 // System.Diagnostics.Debug.WriteLine($"{i}-{j}: {grid[i][j]}");
 
                 foreach (var dir in directions)
                 {
-                    if (grid[i][j] == word[0])  // X
+                    if (grid[x][y] == word[0])  // X
                     {
-                        int l1i = i + 1 * dir[0];
-                        int l1j = j + 1 * dir[1];
-                        if (l1i < 0 || l1i >= rows || l1j < 0 || l1j >= cols)
+                        int mX = x + 1 * dir[0];
+                        int mY = y + 1 * dir[1];
+                        if (mX < 0 || mX >= rows || mY < 0 || mY >= cols)
                         {
                             continue;
                         }
 
-                        if (grid[l1i][l1j] == word[1])  // M
+                        if (grid[mX][mY] == word[1])  // M
                         {
-                            int l2i = i + 2 * dir[0];
-                            int l2j = j + 2 * dir[1];
-                            if (l2i < 0 || l2i >= rows || l2j < 0 || l2j >= cols)
+                            int aX = x + 2 * dir[0];
+                            int aY = y + 2 * dir[1];
+                            if (aX < 0 || aX >= rows || aY < 0 || aY >= cols)
                             {
                                 continue;
                             }
 
-                            if (grid[l2i][l2j] == word[2])  // A
+                            if (grid[aX][aY] == word[2])  // A
                             {
-                                int l3i = i + 3 * dir[0];
-                                int l3j = j + 3 * dir[1];
-                                if (l3i < 0 || l3i >= rows || l3j < 0 || l3j >= cols)
+                                int sX = x + 3 * dir[0];
+                                int sY = y + 3 * dir[1];
+                                if (sX < 0 || sX >= rows || sY < 0 || sY >= cols)
                                 {
                                     continue;
                                 }
 
-                                if (grid[l3i][l3j] == word[3])  // S
+                                if (grid[sX][sY] == word[3])  // S
                                 {
                                     count++;
                                 }
