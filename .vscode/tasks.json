@@ -6,10 +6,22 @@
 			"command": "dotnet",
 			"type": "process",
 			"args": [
-				"build",
-				"${workspaceFolder}"
+				"build"
 			],
-			"problemMatcher": "$msCompile"
+			"problemMatcher": "$msCompile",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "silent", // This suppresses the terminal from popping up
+				"focus": false,
+				"panel": "shared"
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
 		}
 	]
 }

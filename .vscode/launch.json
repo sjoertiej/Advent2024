@@ -5,7 +5,7 @@
             "name": "Debug Tests", // Debug unit tests
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/AdventOfCode2024.Tests/bin/Debug/net8.0/AdventOfCode2024.Tests.dll",
+            "program": "dotnet",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
