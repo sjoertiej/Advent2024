@@ -32,7 +32,6 @@ public class Day03
 
         var reader = new Readers();
         var corruptedMemory = reader.ReadAllText(textFilePath);
-        System.Diagnostics.Debug.WriteLine(corruptedMemory);
 
         var matches = regex.Matches(corruptedMemory);
 
