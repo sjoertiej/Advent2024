@@ -81,7 +81,90 @@ public class Day04
 
     public int Part2(string textFilePath)
     {
-        return 0;
-    }
+        // var word = "XMAS";
 
+        var reader = new Readers();
+        var grid = reader.ReadAllLines(textFilePath);
+
+        int count = 0;
+        int rowLength = grid.Length;
+        int columLength = grid[0].Length;
+        bool diag1;
+        bool diag2;
+
+        for (int x = 0; x < rowLength; x++)
+        {
+            // System.Diagnostics.Debug.WriteLine(i);
+            for (int y = 0; y < columLength; y++)
+            {
+                // System.Diagnostics.Debug.WriteLine($"{i}-{j}: {grid[i][j]}");
+                diag1 = false;
+                diag2 = false;
+                if (grid[x][y] == 'A')  // A
+                {
+                    // TODO check Diagonal up-left if M or S
+                    // if so check counterpart M or S in // Diagonal down-right
+                    // the one andersom
+                    // TODO boundarycheck!
+
+                    // Check Diagonal up-left if M or S
+                    if (x - 1 >= 0 && y - 1 >= 0)
+                    {
+                        if (grid[x-1][y-1] == 'M')
+                        {
+                            // Check Diagonal down-right for S
+                            if (x + 1 < rowLength && y + 1 < columLength)
+                            {
+                                if (grid[x+1][y+1] == 'S')
+                                {
+                                    diag1 = true;
+                                }
+                            }
+                        }
+                        else if (grid[x-1][y-1] == 'S')
+                        {
+                            // Check Diagonal down-right for M
+                            if (x + 1 < rowLength && y + 1 < columLength)
+                            {
+                                if (grid[x+1][y+1] == 'M')
+                                {
+                                    diag1 = true;
+                                }
+                            }
+                        }
+                    }
+                    //            [-1, 1]    // Diagonal up-right
+                    // Diagonal up-right if M or S
+                    if (x - 1 >= 0 && y + 1 < columLength)
+                    {
+                        if (grid[x-1][y+1] == 'M')
+                        {
+                            // Check [1, -1],   // Diagonal down-left
+                            if (x + 1 < rowLength && y - 1 >= 0)
+                            {
+                                if (grid[x+1][y-1] == 'S')
+                                {
+                                    diag2 = true;
+                                }
+                            }
+                        }
+                        else if (grid[x-1][y+1] == 'S')
+                        {
+                            // Check [1, -1],   // Diagonal down-left
+                            if (x + 1 < rowLength && y - 1 >= 0)
+                            {
+                                if (grid[x+1][y-1] == 'M')
+                                {
+                                    diag2 = true;
+                                }
+                            }
+                        }
+                    }
+                    if (diag1 && diag2)
+                        count++;
+                }
+            }
+        }
+        return count;
+    }
 }
